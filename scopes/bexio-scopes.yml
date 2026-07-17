@@ -1,0 +1,91 @@
+generated: '2026-07-17'
+method: searched
+source: https://auth.bexio.com/realms/bexio/.well-known/openid-configuration (live scopes_supported, 2026-07-17)
+docs: https://docs.bexio.com/
+notes: >-
+  Scope list captured verbatim from the live OIDC discovery document
+  scopes_supported for the bexio Keycloak realm. bexio uses a <module>_show /
+  <module>_edit convention (show = read, edit = write). Standard OIDC scopes
+  (openid, profile, email) and offline_access (refresh tokens) are also
+  supported. Descriptions are derived from the module_action naming convention;
+  verify against the developer portal app-registration UI.
+schemes:
+- name: oauth2_authorization_code
+  type: oauth2
+  flow: authorizationCode
+  issuer: https://auth.bexio.com/realms/bexio
+  authorizationUrl: https://auth.bexio.com/realms/bexio/protocol/openid-connect/auth
+  tokenUrl: https://auth.bexio.com/realms/bexio/protocol/openid-connect/token
+  source: https://auth.bexio.com/realms/bexio/.well-known/openid-configuration
+scopes:
+- {scope: openid, description: OIDC authentication (subject identifier).}
+- {scope: profile, description: OIDC standard profile claims.}
+- {scope: email, description: OIDC email claim.}
+- {scope: offline_access, description: Issue refresh tokens for long-lived server-to-server access.}
+- {scope: company_profile, description: Read the company profile.}
+- {scope: additional_company, description: Access additional companies on the account.}
+- {scope: company_memberships_show, description: Read company memberships.}
+- {scope: contact_show, description: Read contacts, relations, groups, sectors.}
+- {scope: contact_edit, description: Create and modify contacts.}
+- {scope: note_show, description: Read notes.}
+- {scope: note_edit, description: Create and modify notes.}
+- {scope: lead_show, description: Read leads.}
+- {scope: lead_edit, description: Create and modify leads.}
+- {scope: kb_offer_show, description: Read quotes/offers (Offerte).}
+- {scope: kb_offer_edit, description: Create and modify quotes/offers.}
+- {scope: kb_order_show, description: Read orders (Auftrag).}
+- {scope: kb_order_edit, description: Create and modify orders.}
+- {scope: kb_invoice_show, description: Read invoices (Rechnung).}
+- {scope: kb_invoice_edit, description: Create and modify invoices, generate QR-bill PDFs.}
+- {scope: kb_delivery_show, description: Read delivery notes (Lieferschein).}
+- {scope: kb_delivery_edit, description: Create and modify delivery notes.}
+- {scope: kb_credit_voucher_show, description: Read credit notes (Gutschrift).}
+- {scope: kb_credit_voucher_edit, description: Create and modify credit notes.}
+- {scope: kb_bill_show, description: Read supplier bills (Lieferantenrechnungen).}
+- {scope: kb_bill_edit, description: Create and modify supplier bills.}
+- {scope: kb_expense_show, description: Read expenses (Spesen).}
+- {scope: kb_expense_edit, description: Create and modify expenses.}
+- {scope: kb_article_order_show, description: Read article/order line items.}
+- {scope: kb_article_order_edit, description: Create and modify article/order line items.}
+- {scope: article_show, description: Read items/products (Artikel).}
+- {scope: article_edit, description: Create and modify items/products.}
+- {scope: stock_edit, description: Modify stock levels.}
+- {scope: accounting, description: Chart of accounts, journal entries, VAT, currencies.}
+- {scope: accounting_settings_show, description: Read accounting settings.}
+- {scope: accounting_settings_edit, description: Modify accounting settings.}
+- {scope: transaction_show, description: Read accounting transactions.}
+- {scope: transaction_edit, description: Create and modify accounting transactions.}
+- {scope: subledger_show, description: Read subledger data.}
+- {scope: subledger_edit, description: Modify subledger data.}
+- {scope: finance_reports, description: Access finance reports.}
+- {scope: project_show, description: Read projects.}
+- {scope: project_edit, description: Create and modify projects.}
+- {scope: task_show, description: Read tasks.}
+- {scope: task_edit, description: Create and modify tasks.}
+- {scope: monitoring_show, description: Read time-tracking / monitoring data.}
+- {scope: monitoring_edit, description: Create and modify time-tracking entries.}
+- {scope: payroll_employee_show, description: Read payroll employees.}
+- {scope: payroll_employee_edit, description: Create and modify payroll employees.}
+- {scope: payroll_absence_show, description: Read payroll absences.}
+- {scope: payroll_absence_edit, description: Create and modify payroll absences.}
+- {scope: payroll_paystub_show, description: Read paystubs.}
+- {scope: payroll_time_account_show, description: Read payroll time accounts.}
+- {scope: payroll_time_account_edit, description: Modify payroll time accounts.}
+- {scope: payroll_statistic_show, description: Read payroll statistics.}
+- {scope: bank_account_show, description: Read bank accounts.}
+- {scope: bank_account_edit, description: Create and modify bank accounts.}
+- {scope: bank_payment_show, description: Read bank payments.}
+- {scope: bank_payment_edit, description: Create and modify bank payments.}
+- {scope: bill_banking_payment_edit, description: Create bill banking payments (pay supplier bills).}
+- {scope: file, description: Upload, list, and manage files and attachments.}
+- {scope: archive_show, description: Read archived documents.}
+- {scope: archive_edit, description: Modify archived documents.}
+- {scope: archive_settings_show, description: Read archive settings.}
+- {scope: archive_settings_edit, description: Modify archive settings.}
+- {scope: connected_clients_show, description: Read connected clients (accountant sharing).}
+- {scope: connected_clients_edit, description: Modify connected clients.}
+- {scope: pat_show, description: Read Personal Access Tokens.}
+- {scope: pat_edit, description: Create and modify Personal Access Tokens.}
+- {scope: roles, description: Access role assignments.}
+- {scope: chat_edit, description: Modify chat.}
+- {scope: subscription_and_permissions, description: Read subscription and permission settings.}

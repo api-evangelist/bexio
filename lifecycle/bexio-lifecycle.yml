@@ -1,0 +1,32 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.bexio.com/ , https://bexio.statuspage.io , https://www.bexio.com/en-CH/api
+versioning:
+  scheme: uri-path
+  current: '2.0'
+  base: https://api.bexio.com/2.0
+  policy: >-
+    Non-breaking changes are introduced without changing the API version -
+    additional JSON fields, new optional parameters, new features on existing
+    calls, and new endpoints. Breaking changes would warrant a new version.
+  docs: https://docs.bexio.com/
+deprecation:
+  policy_url: https://docs.bexio.com/
+  sunset_header: false
+  notices:
+  - change: >-
+      Legacy identity provider https://idp.bexio.com deprecated; all apps must
+      migrate to the Keycloak realm https://auth.bexio.com/realms/bexio.
+    deadline: '2025-03-31'
+  - change: >-
+      Default pagination limit reduced from 1000 to 500 (October 2021); maximum
+      page size enforced at 2000.
+    deadline: '2021-10'
+sla:
+  url: https://bexio.statuspage.io
+  note: >-
+    bexio publishes uptime and incident history via Atlassian Statuspage; the
+    API is provided as-is with no guided implementation or code support per the
+    developer docs.
+status_page: https://bexio.statuspage.io
+deprecated_operations: []

@@ -1,0 +1,19 @@
+generated: '2026-07-17'
+method: generated
+source: >-
+  Generated from openapi/bexio-openapi.yml operationIds + conventions/, errors/,
+  authentication/, scopes/. bexio publishes no first-party Agent Skills or
+  AGENTS.md as of 2026-07-17.
+skills:
+- file: bexio-create-contact-and-invoice.md
+  name: Create a contact and issue an invoice
+  api: openapi/bexio-openapi.yml
+  operations: [createContact, createInvoice, getInvoicePdf]
+- file: bexio-manage-items-catalog.md
+  name: Maintain the items/products catalog
+  api: openapi/bexio-openapi.yml
+  operations: [listArticles, createArticle]
+- file: bexio-log-project-time.md
+  name: Log billable time against a project
+  api: openapi/bexio-openapi.yml
+  operations: [listProjects, createProject, createTimesheet]

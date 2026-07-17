@@ -1,0 +1,56 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.bexio.com/ , derived from openapi/bexio-openapi.yml
+base_url: https://api.bexio.com/2.0
+data_format: application/json
+authentication:
+  styles:
+  - OAuth 2.0 Authorization Code / OpenID Connect (issuer https://auth.bexio.com/realms/bexio)
+  - Personal Access Token (PAT)
+  transport: Authorization Bearer header
+  ref: authentication/bexio-authentication.yml
+  scopes_ref: scopes/bexio-scopes.yml
+pagination:
+  style: limit-offset
+  params:
+    limit: {default: 500, maximum: 2000}
+    offset: {default: 0}
+  notes: >-
+    Default page size was reduced from 1000 to 500 in October 2021; maximum
+    enforced at 2000 across all list endpoints.
+search:
+  style: POST search endpoints
+  notes: >-
+    Most resources expose a POST .../search endpoint accepting an array of
+    field/criteria/value filter objects (e.g. contacts, invoices, articles).
+rate_limiting:
+  signaled: true
+  headers:
+  - RateLimit-Limit
+  - RateLimit-Remaining
+  - RateLimit-Reset
+  status_on_exceed: 429
+  notes: >-
+    bexio documents RateLimit response headers (section added April 2023). Exact
+    per-plan quotas are not published in the docs.
+  ref: rate-limits/bexio-rate-limits.yml
+idempotency:
+  supported: false
+  notes: >-
+    bexio does not document an idempotency-key mechanism. Retries of write
+    operations are not deduplicated server-side; callers must guard against
+    duplicate creation client-side.
+request_tracing:
+  request_id_header: null
+  notes: No documented request-id / correlation header.
+versioning:
+  style: uri-path
+  current: '2.0'
+  ref: lifecycle/bexio-lifecycle.yml
+error_envelope:
+  format: ad-hoc-json
+  shape: >-
+    Errors return a standard HTTP status code with a JSON body typically
+    containing an "error_code" and a human-readable "message"; not RFC 9457
+    problem+json.
+  ref: errors/bexio-problem-types.yml

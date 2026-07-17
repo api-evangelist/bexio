@@ -1,0 +1,51 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.bexio.com/ (error handling / HTTP status codes) + derived from openapi/bexio-openapi.yml
+format: http-status
+envelope:
+  media_type: application/json
+  shape: >-
+    JSON body with an error_code and a human-readable message. bexio does not use
+    RFC 9457 application/problem+json.
+notes: >-
+  The bexio OpenAPI in this repo is modeled from docs and declares only 2xx
+  responses, so this catalog is built from the HTTP status codes bexio documents
+  its API returns. Titles/remediation are derived from standard HTTP semantics
+  and the bexio docs error section.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: The request body or parameters could not be parsed or failed basic validation.
+  remediation: Fix the request payload/parameters and retry.
+- status: 401
+  title: Unauthorized
+  meaning: Missing, invalid, or expired access token (OAuth access token or PAT).
+  remediation: Obtain/refresh a valid Bearer token and retry.
+- status: 403
+  title: Forbidden
+  meaning: The token is valid but lacks the required OAuth scope or the resource is not permitted.
+  remediation: Request the correct scope (see scopes/bexio-scopes.yml) during authorization.
+- status: 404
+  title: Not Found
+  meaning: The resource id does not exist or is not visible to the authenticated company.
+  remediation: Verify the id and the active company context.
+- status: 415
+  title: Unsupported Media Type
+  meaning: Content-Type is not application/json (or not multipart for file upload).
+  remediation: Set the correct Content-Type header.
+- status: 422
+  title: Unprocessable Entity
+  meaning: Request is well-formed but semantically invalid (business-rule / field validation failure).
+  remediation: Inspect the error_code/message and correct the offending fields.
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit exceeded; see the RateLimit-* response headers.
+  remediation: Back off until RateLimit-Reset and retry.
+- status: 500
+  title: Internal Server Error
+  meaning: Unexpected server-side error.
+  remediation: Retry with backoff; contact support if it persists.
+- status: 503
+  title: Service Unavailable
+  meaning: The API is temporarily unavailable (maintenance/overload).
+  remediation: Retry after a delay; check https://bexio.statuspage.io.

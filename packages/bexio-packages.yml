@@ -1,0 +1,45 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  Packagist, Hex.pm, and GitHub searches 2026-07-17. bexio publishes NO
+  first-party/official SDK; the client-library ecosystem is entirely
+  community-maintained. All entries below are official:false.
+notes: >-
+  bexio does not ship an official client library or CLI. The docs point
+  developers at the raw REST API. The libraries below are community projects
+  and each covers only a subset of the API surface.
+packages:
+- language: php
+  registry: packagist
+  name: onlime/bexio-api-client
+  url: https://packagist.org/packages/onlime/bexio-api-client
+  install: composer require onlime/bexio-api-client
+  official: false
+  repo: https://github.com/onlime/bexio-api-client
+- language: php
+  registry: packagist
+  name: onlime/laravel-bexio-api-client
+  url: https://packagist.org/packages/onlime/laravel-bexio-api-client
+  install: composer require onlime/laravel-bexio-api-client
+  official: false
+  repo: https://github.com/onlime/laravel-bexio-api-client
+- language: php
+  registry: packagist
+  name: christianruhstaller/bexio-api-php-client
+  url: https://packagist.org/packages/christianruhstaller/bexio-api-php-client
+  install: composer require christianruhstaller/bexio-api-php-client
+  official: false
+  repo: https://github.com/christianruhstaller/bexio-api-php-client
+- language: php
+  registry: packagist
+  name: gigerit/bexio-api-client
+  url: https://packagist.org/packages/gigerit/bexio-api-client
+  install: composer require gigerit/bexio-api-client
+  official: false
+  repo: https://github.com/gigerIT/bexio-api-client
+- language: elixir
+  registry: hex
+  name: bexio_api_client
+  url: https://hexdocs.pm/bexio_api_client/
+  install: "{:bexio_api_client, \"~> 0.9\"}"
+  official: false

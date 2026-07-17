@@ -1,0 +1,26 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.bexio.com/ (API documentation "Changes" section)
+scheme: >-
+  Dated changelog embedded in the developer documentation. Non-breaking changes
+  ship continuously without an API version bump; the API version (2.0) only
+  changes for breaking changes.
+current_version: '2.0'
+notes: >-
+  bexio maintains the authoritative, dated change list inside the docs at
+  docs.bexio.com. The entries below are the notable recent, dated items captured
+  from that changelog and the developer API landing page; consult the live docs
+  for the complete list.
+entries:
+- date: '2025-03-31'
+  breaking: true
+  highlights:
+  - Deadline to migrate from the legacy IdP idp.bexio.com to the Keycloak realm auth.bexio.com/realms/bexio.
+- date: '2023-04'
+  breaking: false
+  highlights:
+  - Added a rate limiting documentation section describing the RateLimit response headers.
+- date: '2021-10'
+  breaking: false
+  highlights:
+  - Default pagination limit reduced from 1000 to 500 across list endpoints (maximum 2000).

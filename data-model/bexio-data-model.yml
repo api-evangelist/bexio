@@ -1,0 +1,60 @@
+generated: '2026-07-17'
+method: derived
+source: openapi/bexio-openapi.yml (schema properties + id-reference fields)
+notes: >-
+  Entity graph derived from the id-reference fields in the OpenAPI schemas.
+  bexio identifiers are integers (no typed id-prefixes). Relationships are
+  inferred from *_id foreign-key fields.
+entities:
+- name: Contact
+  id: id
+  domain: contacts
+  fields: [contact_type_id, name_1, name_2, address, postcode, city, country_id, mail, phone_fixed]
+  relationships:
+  - {type: belongs_to, target: Country, via: country_id}
+- name: SalesDocument
+  id: id
+  domain: sales
+  note: Backs offers (kb_offer), orders (kb_order), and invoices (kb_invoice).
+  fields: [document_nr, title, contact_id, currency_id, total, total_gross, mwst_type, positions]
+  relationships:
+  - {type: belongs_to, target: Contact, via: contact_id}
+  - {type: belongs_to, target: Currency, via: currency_id}
+  - {type: has_many, target: Position, via: positions}
+- name: Article
+  id: id
+  domain: items
+  fields: [intern_name, intern_code, sale_price, purchase_price, currency_id]
+  relationships:
+  - {type: belongs_to, target: Currency, via: currency_id}
+- name: Project
+  id: id
+  domain: projects
+  fields: [name, contact_id, pr_state_id, start_date, end_date]
+  relationships:
+  - {type: belongs_to, target: Contact, via: contact_id}
+- name: Timesheet
+  id: id
+  domain: projects
+  relationships:
+  - {type: belongs_to, target: Project, via: pr_project_id}
+- name: Account
+  id: id
+  domain: accounting
+- name: Currency
+  id: id
+  domain: accounting
+- name: Tax
+  id: id
+  domain: accounting
+- name: ManualEntry
+  id: id
+  domain: accounting
+- name: Bill
+  id: id
+  domain: purchasing
+  relationships:
+  - {type: belongs_to, target: Contact, via: contact_id}
+- name: BankAccount
+  id: id
+  domain: banking

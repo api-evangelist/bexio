@@ -1,0 +1,33 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for bexio API
+  version: 1.0.0
+extends: openapi/bexio-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-17'
+    x-api-model-provenance: modeled-from-docs
+    x-authentication: authentication/bexio-authentication.yml
+    x-oauth-scopes: scopes/bexio-scopes.yml
+    x-conventions: conventions/bexio-conventions.yml
+    x-error-catalog: errors/bexio-problem-types.yml
+    x-lifecycle: lifecycle/bexio-lifecycle.yml
+    x-well-known: well-known/bexio-well-known.yml
+- target: $.info
+  update:
+    x-status-page: https://bexio.statuspage.io
+    x-changelog: https://docs.bexio.com/
+- target: $.components.securitySchemes.bearerAuth
+  update:
+    x-oauth2-issuer: https://auth.bexio.com/realms/bexio
+    x-oauth2-authorization-url: https://auth.bexio.com/realms/bexio/protocol/openid-connect/auth
+    x-oauth2-token-url: https://auth.bexio.com/realms/bexio/protocol/openid-connect/token
+    x-alternative: Personal Access Token (PAT)
+- target: $.paths.*.*.responses
+  update:
+    '429':
+      description: >-
+        Too Many Requests - rate limit exceeded. Inspect the RateLimit-* response
+        headers and retry after RateLimit-Reset. (Enrichment note; see
+        errors/bexio-problem-types.yml.)

@@ -1,0 +1,28 @@
+generated: '2026-07-17'
+method: searched
+source: live probe of bexio hosts 2026-07-17
+hosts:
+- host: https://auth.bexio.com/realms/bexio
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: bexio-openid-configuration.json
+    note: OIDC discovery for the bexio Keycloak realm (issuer https://auth.bexio.com/realms/bexio); publishes scopes_supported, grant_types, endpoints, JWKS.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: bexio-oauth-authorization-server.json
+    note: RFC 8414 OAuth 2.0 Authorization Server Metadata (Keycloak).
+- host: https://www.bexio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: bexio-security.txt
+    note: RFC 9116 security.txt; Contact security@bexio.com, VDP on bugbounty.ch. Expires field (2025-12-31) had lapsed at probe time.
+- host: https://api.bexio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /2.0/.well-known/openid-configuration
+    status: 401

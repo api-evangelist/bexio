@@ -1,0 +1,46 @@
+generated: '2026-07-17'
+method: searched
+status: community
+source: >-
+  https://github.com/promptpartner/bexio-mcp-server ,
+  https://www.pulsemcp.com/servers/promptpartner-bexio , https://zapier.com/mcp/bexio
+notes: >-
+  bexio does not operate an official hosted MCP server. A community MCP server
+  (PromptPartner/bexio-mcp-server by Lukas Hertig) wraps the bexio REST API and
+  exposes 300+ tools for invoices, contacts, projects, and time tracking; it runs
+  locally (npx) as a pass-through to the API using a BEXIO_API_TOKEN and stores no
+  data. Zapier and viaSocket also expose bexio as a hosted MCP endpoint via their
+  connector platforms. The candidate tool list below is DERIVED from the OpenAPI
+  operations in this repo as a governance reference.
+servers:
+- name: promptpartner-bexio-mcp-server
+  origin: community
+  transport: stdio
+  install: npx @promptpartner/bexio-mcp-server
+  repo: https://github.com/promptpartner/bexio-mcp-server
+  env: [BEXIO_API_TOKEN]
+  tool_count: 310
+  passthrough: https://api.bexio.com/2.0
+- name: zapier-bexio-mcp
+  origin: platform
+  transport: http
+  url: https://zapier.com/mcp/bexio
+tools:
+  method: derived
+  source: openapi/bexio-openapi.yml
+  candidates:
+  - {name: list_contacts, source_operation: openapi/bexio-openapi.yml#listContacts}
+  - {name: create_contact, source_operation: openapi/bexio-openapi.yml#createContact}
+  - {name: get_contact, source_operation: openapi/bexio-openapi.yml#getContact}
+  - {name: list_invoices, source_operation: openapi/bexio-openapi.yml#listInvoices}
+  - {name: create_invoice, source_operation: openapi/bexio-openapi.yml#createInvoice}
+  - {name: get_invoice_pdf, source_operation: openapi/bexio-openapi.yml#getInvoicePdf}
+  - {name: list_orders, source_operation: openapi/bexio-openapi.yml#listOrders}
+  - {name: create_offer, source_operation: openapi/bexio-openapi.yml#createOffer}
+  - {name: list_articles, source_operation: openapi/bexio-openapi.yml#listArticles}
+  - {name: list_accounts, source_operation: openapi/bexio-openapi.yml#listAccounts}
+  - {name: create_manual_entry, source_operation: openapi/bexio-openapi.yml#createManualEntry}
+  - {name: list_projects, source_operation: openapi/bexio-openapi.yml#listProjects}
+  - {name: create_timesheet, source_operation: openapi/bexio-openapi.yml#createTimesheet}
+  - {name: upload_file, source_operation: openapi/bexio-openapi.yml#uploadFile}
+  - {name: list_bank_accounts, source_operation: openapi/bexio-openapi.yml#listBankAccounts}

@@ -193,6 +193,60 @@ common:
   url: finops/bexio-finops.yml
 - url: https://www.bexio.com/en-CH/blog
   type: Blog
+- type: WellKnown
+  url: well-known/bexio-well-known.yml
+- type: SecurityTxt
+  url: well-known/bexio-security.txt
+- type: Security
+  url: https://www.bexio.com/en-CH/security
+- type: Compliance
+  url: https://www.bexio.com/en-CH/security
+- type: OAuthScopes
+  url: scopes/bexio-scopes.yml
+- type: Packages
+  url: packages/bexio-packages.yml
+- type: MCPServer
+  url: mcp/bexio-mcp.yml
+- type: LLMsTxt
+  url: llms/bexio-llms.txt
+- type: Overlay
+  url: overlays/bexio-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/bexio-conformance.yml
+- type: ErrorCatalog
+  url: errors/bexio-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/bexio-lifecycle.yml
+- type: StatusPage
+  url: https://bexio.statuspage.io
+- type: Deprecation
+  url: https://docs.bexio.com/
+- type: ChangeLog
+  url: changelog/bexio-changelog.yml
+- type: Conventions
+  url: conventions/bexio-conventions.yml
+- type: DataModel
+  url: data-model/bexio-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Postman
+  url: collections/bexio.postman_collection.json
+- type: DeveloperPortal
+  url: https://developer.bexio.com/
+- type: APIReference
+  url: https://developer.bexio.com/reference
+- type: GettingStarted
+  url: https://www.bexio.com/en-CH/quickstart-guide
+- type: Support
+  url: https://help.bexio.com/s/
+- type: Pricing
+  url: https://www.bexio.com/en-CH/packages-and-prices
+- type: SignUp
+  url: https://www.bexio.com/en-CH/
+- type: TermsOfService
+  url: https://www.bexio.com/en-CH/policies
+- type: PrivacyPolicy
+  url: https://www.bexio.com/en-CH/policies/privacy-policy
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
