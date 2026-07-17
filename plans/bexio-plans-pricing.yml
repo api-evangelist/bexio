@@ -1,0 +1,133 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: bexio
+providerId: bexio
+created: '2026-07-17'
+modified: '2026-07-17'
+reconciled: true
+tags:
+- Accounting
+- ERP
+- Invoicing
+- SMB
+- Switzerland
+- Plans
+description: >-
+  bexio is sold as a per-company SaaS subscription in Swiss francs (CHF), tiered by
+  feature set and included user seats, with a 30-day free trial and an annual-billing
+  discount. The REST API is included with every paid subscription at no separate API
+  fee - API access is a feature of the product, not a metered add-on. There is no
+  usage-based per-call API pricing. Prices below reflect published 2026 CHF monthly
+  rates and may change (bexio raised prices ~15-25% in early 2026).
+notes: >-
+  Verify current CHF rates and included-seat counts on the bexio packages-and-prices
+  page during reconciliation. Annual billing is advertised with a CHF 120 discount.
+  Some capabilities (document archive, bexio Pay) are add-ons. Payroll, POS, and
+  extra users are priced separately.
+sources:
+- https://www.bexio.com/en-CH/packages-and-prices
+- https://docs.bexio.com/
+- https://developer.bexio.com/
+currency: CHF
+plans:
+- id: bexio-trial
+  name: Free Trial
+  type: trial
+  description: >-
+    30-day free trial with full Ultimate-package features (excluding document
+    archive and bexio Pay). No credit card required. API access available for
+    building and testing integrations.
+  entries:
+  - label: 30-Day Trial
+    name: trial
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: switzerland
+    unit: 1
+    price: CHF 0 for 30 days
+    userMultiplied: false
+  elements:
+  - name: Full feature access (trial)
+  - name: REST API access
+- id: bexio-basic
+  name: Basic
+  type: subscription
+  description: Entry package for solo/self-employed; single user.
+  entries:
+  - label: Basic Monthly
+    name: basic
+    type: flat
+    metric: subscription
+    limit: 1
+    timeFrame: month
+    geo: switzerland
+    unit: 1
+    price: CHF 45 / month (1 user)
+    userMultiplied: false
+  elements:
+  - name: Invoicing and QR-bill
+  - name: Contacts
+  - name: REST API access
+- id: bexio-advanced
+  name: Advanced
+  type: subscription
+  description: Adds accounting; up to 2 users.
+  entries:
+  - label: Advanced Monthly
+    name: advanced
+    type: flat
+    metric: subscription
+    limit: 2
+    timeFrame: month
+    geo: switzerland
+    unit: 1
+    price: CHF 52 / month (up to 2 users)
+    userMultiplied: false
+  elements:
+  - name: Accounting
+  - name: Invoicing and QR-bill
+  - name: REST API access
+- id: bexio-optima
+  name: Optima
+  type: subscription
+  description: Broader feature set for growing SMBs; up to 5 users.
+  entries:
+  - label: Optima Monthly
+    name: optima
+    type: flat
+    metric: subscription
+    limit: 5
+    timeFrame: month
+    geo: switzerland
+    unit: 1
+    price: CHF 79 / month (up to 5 users)
+    userMultiplied: false
+  elements:
+  - name: Accounting
+  - name: Projects and time tracking
+  - name: REST API access
+- id: bexio-ultimate
+  name: Ultimate
+  type: subscription
+  description: Full feature set; up to 25 users.
+  entries:
+  - label: Ultimate Monthly
+    name: ultimate
+    type: flat
+    metric: subscription
+    limit: 25
+    timeFrame: month
+    geo: switzerland
+    unit: 1
+    price: CHF 129 / month (up to 25 users)
+    userMultiplied: false
+  elements:
+  - name: All modules
+  - name: Payroll (add-on)
+  - name: REST API access
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

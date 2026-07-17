@@ -1,0 +1,81 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: bexio
+providerId: bexio
+created: '2026-07-17'
+modified: '2026-07-17'
+reconciled: true
+tags:
+- Accounting
+- ERP
+- Switzerland
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of bexio spend. bexio bills a flat recurring SaaS subscription per
+  company in Swiss francs (CHF), tiered by package (Basic / Advanced / Optima /
+  Ultimate) and included user seats, with optional add-ons (extra users, payroll,
+  document archive, bexio Pay). The REST API is included in the subscription -
+  there is no per-call/metered API charge - so API cost management is really
+  subscription-tier and seat management, plus watching add-on charges.
+notes: >-
+  Because API access is bundled (not usage-metered), the primary cost levers are
+  choosing the right package tier, right-sizing user seats, and controlling add-ons.
+  Verify CHF rates during reconciliation; bexio raised prices in early 2026.
+sources:
+- https://www.bexio.com/en-CH/packages-and-prices
+- https://docs.bexio.com/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: bexio AG
+serviceCategory: Business Application Software
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly or Annual
+  billingCurrency: CHF
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: bexio
+  ServiceCategory: Business Application Software
+  ProviderName: bexio AG
+  PublisherName: bexio AG
+  InvoiceIssuerName: bexio AG
+  BillingCurrency: CHF
+  ChargeCategory: Purchase
+  PricingCategory: Subscription-Based
+meters:
+- name: subscription_seats
+  description: Recurring per-company subscription and included/extra user seats, billed in CHF per month or year.
+  unit: seats
+  aggregation: sum
+  dimensions:
+  - company
+  - package
+- name: addons
+  description: Optional add-ons (payroll, document archive, bexio Pay) billed on top of the base package.
+  unit: addons
+  aggregation: sum
+  dimensions:
+  - company
+  - addon
+principles:
+- name: Visibility
+  description: Track the active bexio package, seat count, and enabled add-ons per company against the CHF invoice.
+- name: Allocation
+  description: Map the bexio subscription to the internal cost center / entity that owns the finance function.
+- name: Optimization
+  description: Pick the lowest package tier that covers required modules; right-size user seats; prefer annual billing for the CHF 120 discount; disable unused add-ons.
+- name: Accountability
+  description: Assign an owner to review the bexio subscription and add-on charges at renewal.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

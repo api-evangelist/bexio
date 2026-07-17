@@ -1,0 +1,21 @@
+generated: '2026-07-17'
+method: searched
+probe: true
+source: https://www.bexio.com/en-CH/security
+url: https://www.bexio.com/en-CH/security
+certifications:
+- ISO 27001
+- Swiss FADP (revDSG)
+- GDPR
+evidence:
+- source: https://www.bexio.com/en-CH/security
+  keywords:
+  - iso 27001
+  - data protection
+  - swiss data center
+  - gdpr
+notes: >-
+  bexio (a Swiss company, part of Mobiliar) hosts customer data in Switzerland and
+  documents its information-security program, Swiss FADP/revDSG compliance, and GDPR
+  alignment on its security and privacy pages. Verify the current certification list
+  on the live security page during reconciliation.

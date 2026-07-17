@@ -1,0 +1,20 @@
+generated: '2026-07-17'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + API/auth hosts
+hosts:
+- host: www.bexio.com
+  https: true
+- host: api.bexio.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  8 04:42:36 2026 GMT
+  note: Probed 2026-07-17 -> HTTP 401 (Bearer auth required), confirming a live authenticated REST host.
+- host: auth.bexio.com
+  https: true
+  note: Keycloak OpenID Connect realm (realms/bexio); openid-configuration served over HTTPS.
+- host: docs.bexio.com
+  https: true
+domains:
+- domain: bexio.com
+  security_txt: true
+  security_txt_url: https://www.bexio.com/.well-known/security.txt

@@ -1,0 +1,66 @@
+generated: '2026-07-17'
+method: probed
+source: >-
+  https://auth.bexio.com/realms/bexio/.well-known/openid-configuration (live probe)
+  and https://docs.bexio.com/ / https://developer.bexio.com/
+summary:
+  types:
+  - oauth2
+  - http
+notes: >-
+  bexio supports two auth styles, both presented as an Authorization: Bearer
+  token against https://api.bexio.com/2.0. (1) OAuth 2.0 Authorization Code /
+  OpenID Connect via the Keycloak realm at https://auth.bexio.com/realms/bexio
+  for user-delegated app access. (2) Personal Access Tokens (PAT) for
+  server-to-server access. Fine-grained OAuth scopes gate each module
+  (contact_show/edit, kb_invoice_show/edit, accounting, project_show/edit,
+  payroll_employee_show/edit, etc.). offline_access grants refresh tokens.
+schemes:
+- name: oauth2_authorization_code
+  type: oauth2
+  flow: authorizationCode
+  issuer: https://auth.bexio.com/realms/bexio
+  authorizationUrl: https://auth.bexio.com/realms/bexio/protocol/openid-connect/auth
+  tokenUrl: https://auth.bexio.com/realms/bexio/protocol/openid-connect/token
+  scopes:
+  - openid
+  - profile
+  - email
+  - offline_access
+  - company_profile
+  - contact_show
+  - contact_edit
+  - kb_offer_show
+  - kb_offer_edit
+  - kb_order_show
+  - kb_order_edit
+  - kb_invoice_show
+  - kb_invoice_edit
+  - article_show
+  - article_edit
+  - accounting
+  - project_show
+  - project_edit
+  - task_show
+  - task_edit
+  - file
+  - kb_bill_show
+  - kb_bill_edit
+  - kb_expense_show
+  - kb_expense_edit
+  - payroll_employee_show
+  - payroll_employee_edit
+  - payroll_absence_show
+  - payroll_absence_edit
+  - bank_account_show
+  - bank_payment_show
+  sources:
+  - https://auth.bexio.com/realms/bexio/.well-known/openid-configuration
+  - https://developer.bexio.com/
+- name: personal_access_token
+  type: http
+  scheme: bearer
+  bearerFormat: PAT
+  sources:
+  - https://docs.bexio.com/
+  - https://developer.bexio.com/

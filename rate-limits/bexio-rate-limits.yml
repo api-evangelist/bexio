@@ -1,0 +1,56 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: bexio
+providerId: bexio
+created: '2026-07-17'
+modified: '2026-07-17'
+reconciled: false
+tags:
+- Accounting
+- ERP
+- Switzerland
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  The bexio API enforces a per-company (per-account) rate limit on the number of
+  requests per minute. When the limit is exceeded the API responds with HTTP 429
+  and a ratelimit-reset header indicating when the window resets. Standard
+  RateLimit HTTP headers are returned on responses. The exact requests-per-minute
+  threshold is not published as a fixed public number in the documentation and is
+  not reconciled in this artifact.
+notes: >-
+  Confirm the current per-minute request threshold and the exact RateLimit header
+  names/semantics in the live bexio API basics documentation during reconciliation.
+  Separate from rate limiting, list endpoints paginate with a default page size of
+  500 and a maximum of 2000 (limit/offset).
+sources:
+- https://docs.bexio.com/
+- https://developer.bexio.com/
+responseCodes:
+  throttled: 429
+headers:
+- name: ratelimit-reset
+  description: Seconds/timestamp indicating when the current rate-limit window resets (returned with 429).
+- name: RateLimit-*
+  description: Standard RateLimit HTTP headers describing the current limit/remaining window.
+limits:
+- name: Requests Per Minute
+  scope: company
+  metric: requests
+  limit: see provider documentation
+  notes: Per-company per-minute request cap; exceeding it returns HTTP 429.
+- name: Pagination Page Size
+  scope: request
+  metric: records
+  limit: '500 default / 2000 maximum'
+  notes: Controlled via limit and offset query parameters on list endpoints.
+policies:
+- name: Backoff Strategy
+  description: On 429, honor the ratelimit-reset header and retry after the window resets, using exponential backoff with jitter.
+- name: Pagination
+  description: Use limit (max 2000) and offset to page large result sets rather than issuing many small requests.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

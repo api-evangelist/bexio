@@ -1,0 +1,267 @@
+{
+  "info": {
+    "name": "bexio API",
+    "description": "Postman collection covering key endpoints of the bexio REST API (https://api.bexio.com/2.0). Modeled from https://docs.bexio.com/. Authenticate with an OAuth 2.0 access token (OpenID Connect, issuer https://auth.bexio.com/realms/bexio) or a Personal Access Token, supplied as a Bearer token.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "List contacts",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/contact?limit=500&offset=0",
+              "host": ["{{baseUrl}}"],
+              "path": ["contact"],
+              "query": [
+                { "key": "limit", "value": "500" },
+                { "key": "offset", "value": "0" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contact_type_id\": 1,\n  \"name_1\": \"Muster AG\",\n  \"address\": \"Bahnhofstrasse 1\",\n  \"postcode\": \"8001\",\n  \"city\": \"Zurich\",\n  \"country_id\": 1,\n  \"mail\": \"info@muster.ch\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/contact",
+              "host": ["{{baseUrl}}"],
+              "path": ["contact"]
+            }
+          }
+        },
+        {
+          "name": "Fetch a contact",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/contact/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["contact", ":id"],
+              "variable": [{ "key": "id", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales Orders",
+      "item": [
+        {
+          "name": "List quotes (Offerten)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/kb_offer",
+              "host": ["{{baseUrl}}"],
+              "path": ["kb_offer"]
+            }
+          }
+        },
+        {
+          "name": "List orders (Auftraege)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/kb_order",
+              "host": ["{{baseUrl}}"],
+              "path": ["kb_order"]
+            }
+          }
+        },
+        {
+          "name": "List invoices (Rechnungen)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/kb_invoice?limit=500&offset=0",
+              "host": ["{{baseUrl}}"],
+              "path": ["kb_invoice"],
+              "query": [
+                { "key": "limit", "value": "500" },
+                { "key": "offset", "value": "0" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create invoice (QR-bill)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Rechnung 2026-001\",\n  \"contact_id\": 1,\n  \"currency_id\": 1,\n  \"mwst_type\": 0,\n  \"positions\": [\n    {\n      \"amount\": \"1\",\n      \"unit_price\": \"100.00\",\n      \"text\": \"Consulting\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/kb_invoice",
+              "host": ["{{baseUrl}}"],
+              "path": ["kb_invoice"]
+            }
+          }
+        },
+        {
+          "name": "Download invoice PDF",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/kb_invoice/:id/pdf",
+              "host": ["{{baseUrl}}"],
+              "path": ["kb_invoice", ":id", "pdf"],
+              "variable": [{ "key": "id", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Accounting",
+      "item": [
+        {
+          "name": "List accounts (Konten)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/accounts",
+              "host": ["{{baseUrl}}"],
+              "path": ["accounts"]
+            }
+          }
+        },
+        {
+          "name": "List VAT taxes (MWST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/taxes",
+              "host": ["{{baseUrl}}"],
+              "path": ["taxes"]
+            }
+          }
+        },
+        {
+          "name": "List currencies",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/currencies",
+              "host": ["{{baseUrl}}"],
+              "path": ["currencies"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        {
+          "name": "List items (Artikel)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/article",
+              "host": ["{{baseUrl}}"],
+              "path": ["article"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "List projects",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/pr_project",
+              "host": ["{{baseUrl}}"],
+              "path": ["pr_project"]
+            }
+          }
+        },
+        {
+          "name": "List timesheets",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/timesheet",
+              "host": ["{{baseUrl}}"],
+              "path": ["timesheet"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Files",
+      "item": [
+        {
+          "name": "List files",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/files",
+              "host": ["{{baseUrl}}"],
+              "path": ["files"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

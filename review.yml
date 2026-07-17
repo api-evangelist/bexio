@@ -1,0 +1,61 @@
+aid: bexio
+name: bexio
+review:
+  question: Does bexio expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-17'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. bexio's public API is a synchronous
+    request/response REST API only. There is no documented WebSocket,
+    Server-Sent Events, or streaming surface, and (per the docs and
+    third-party integration guides) no native webhook/event push either,
+    so there is no event-driven surface to model as AsyncAPI.
+findings:
+  summary: |
+    bexio does not publish a documented public WebSocket API. The bexio API
+    is a REST (HTTPS) API served under https://api.bexio.com/2.0 with JSON
+    request/response bodies, secured by OAuth 2.0 (OpenID Connect, issuer
+    https://auth.bexio.com/realms/bexio) or Personal Access Tokens. No
+    realtime, bidirectional, or streaming WebSocket (ws:// or wss://)
+    endpoint is documented for any module (contacts, sales, accounting,
+    projects, payroll, banking). bexio's API also does not natively support
+    webhooks as of the review date.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.bexio.com/2.0
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in the bexio API reference.
+  endpointsConfirmedRest:
+    - GET  https://api.bexio.com/2.0/contact
+    - POST https://api.bexio.com/2.0/contact
+    - GET  https://api.bexio.com/2.0/kb_offer
+    - GET  https://api.bexio.com/2.0/kb_order
+    - GET  https://api.bexio.com/2.0/kb_invoice
+    - POST https://api.bexio.com/2.0/kb_invoice
+    - GET  https://api.bexio.com/2.0/article
+    - GET  https://api.bexio.com/2.0/accounts
+    - GET  https://api.bexio.com/2.0/pr_project
+    - GET  https://api.bexio.com/2.0/files
+sources:
+  - url: https://docs.bexio.com/
+    type: Documentation
+    note: API basics list a REST host https://api.bexio.com/2.0 with JSON; no WebSocket mentioned.
+  - url: https://developer.bexio.com/
+    type: Documentation
+    note: Developer portal for OAuth apps and Personal Access Tokens; REST only.
+  - url: https://auth.bexio.com/realms/bexio/.well-known/openid-configuration
+    type: Authentication
+    note: OpenID Connect configuration; confirms OAuth 2.0 Authorization Code auth for the REST API.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: false
+  reason: |
+    No WebSocket, SSE, or streaming surface exists and no native webhook/event
+    push is documented, so no AsyncAPI document was authored and no AsyncAPI
+    pointer was added to apis.yml.
