@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: bexio Accounting Contacts API
+  description: REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.
+  termsOfService: https://www.bexio.com/en-CH/gtc
+  contact:
+    name: bexio Developer Support
+    url: https://developer.bexio.com/
+  version: '2.0'
+servers:
+- url: https://api.bexio.com/2.0
+  description: bexio API v2.0 (Switzerland)
+security:
+- bearerAuth: []
+tags:
+- name: Contacts
+paths:
+  /contact:
+    get:
+      operationId: listContacts
+      tags:
+      - Contacts
+      summary: List contacts
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: A list of contacts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact'
+    post:
+      operationId: createContact
+      tags:
+      - Contacts
+      summary: Create a contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        '201':
+          description: The created contact.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+  /contact/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getContact
+      tags:
+      - Contacts
+      summary: Fetch a contact
+      responses:
+        '200':
+          description: A single contact.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+    post:
+      operationId: updateContact
+      tags:
+      - Contacts
+      summary: Overwrite a contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        '200':
+          description: The updated contact.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+    delete:
+      operationId: deleteContact
+      tags:
+      - Contacts
+      summary: Delete a contact
+      responses:
+        '200':
+          description: Deletion result.
+components:
+  schemas:
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+        contact_type_id:
+          type: integer
+          description: 1 = company, 2 = person.
+        name_1:
+          type: string
+        name_2:
+          type: string
+        address:
+          type: string
+        postcode:
+          type: string
+        city:
+          type: string
+        country_id:
+          type: integer
+        mail:
+          type: string
+        phone_fixed:
+          type: string
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'OAuth 2.0 Authorization Code (OpenID Connect, issuer https://auth.bexio.com/realms/bexio) access token, or a Personal Access Token (PAT), presented as an Authorization: Bearer header.'

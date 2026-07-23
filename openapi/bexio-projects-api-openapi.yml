@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: bexio Accounting Projects API
+  description: REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.
+  termsOfService: https://www.bexio.com/en-CH/gtc
+  contact:
+    name: bexio Developer Support
+    url: https://developer.bexio.com/
+  version: '2.0'
+servers:
+- url: https://api.bexio.com/2.0
+  description: bexio API v2.0 (Switzerland)
+security:
+- bearerAuth: []
+tags:
+- name: Projects
+paths:
+  /pr_project:
+    get:
+      operationId: listProjects
+      tags:
+      - Projects
+      summary: List projects
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: A list of projects.
+    post:
+      operationId: createProject
+      tags:
+      - Projects
+      summary: Create a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '201':
+          description: The created project.
+  /timesheet:
+    get:
+      operationId: listTimesheets
+      tags:
+      - Projects
+      summary: List timesheet entries
+      responses:
+        '200':
+          description: A list of timesheet entries.
+    post:
+      operationId: createTimesheet
+      tags:
+      - Projects
+      summary: Create a timesheet entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: The created timesheet entry.
+components:
+  schemas:
+    Project:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        contact_id:
+          type: integer
+        pr_state_id:
+          type: integer
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'OAuth 2.0 Authorization Code (OpenID Connect, issuer https://auth.bexio.com/realms/bexio) access token, or a Personal Access Token (PAT), presented as an Authorization: Bearer header.'

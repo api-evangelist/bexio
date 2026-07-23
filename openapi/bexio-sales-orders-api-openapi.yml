@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: bexio Accounting Sales Orders API
+  description: REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.
+  termsOfService: https://www.bexio.com/en-CH/gtc
+  contact:
+    name: bexio Developer Support
+    url: https://developer.bexio.com/
+  version: '2.0'
+servers:
+- url: https://api.bexio.com/2.0
+  description: bexio API v2.0 (Switzerland)
+security:
+- bearerAuth: []
+tags:
+- name: Sales Orders
+paths:
+  /kb_offer:
+    get:
+      operationId: listOffers
+      tags:
+      - Sales Orders
+      summary: List quotes (Offerten)
+      description: Sales quotes / offers. Local term Offerte (EN gloss quote).
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: A list of quotes.
+    post:
+      operationId: createOffer
+      tags:
+      - Sales Orders
+      summary: Create a quote (Offerte)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesDocument'
+      responses:
+        '201':
+          description: The created quote.
+  /kb_order:
+    get:
+      operationId: listOrders
+      tags:
+      - Sales Orders
+      summary: List orders (Auftraege)
+      responses:
+        '200':
+          description: A list of orders.
+    post:
+      operationId: createOrder
+      tags:
+      - Sales Orders
+      summary: Create an order (Auftrag)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesDocument'
+      responses:
+        '201':
+          description: The created order.
+  /kb_invoice:
+    get:
+      operationId: listInvoices
+      tags:
+      - Sales Orders
+      summary: List invoices (Rechnungen)
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: A list of invoices.
+    post:
+      operationId: createInvoice
+      tags:
+      - Sales Orders
+      summary: Create an invoice (Rechnung)
+      description: Creates a customer invoice. bexio can render the invoice as a Swiss QR-bill (QR-Rechnung) PDF with an embedded Swiss QR code for payment.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesDocument'
+      responses:
+        '201':
+          description: The created invoice.
+  /kb_invoice/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getInvoice
+      tags:
+      - Sales Orders
+      summary: Fetch an invoice
+      responses:
+        '200':
+          description: A single invoice.
+  /kb_invoice/{id}/pdf:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getInvoicePdf
+      tags:
+      - Sales Orders
+      summary: Download an invoice PDF (QR-bill)
+      responses:
+        '200':
+          description: The invoice document, base64-encoded PDF.
+components:
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
+  schemas:
+    SalesDocument:
+      type: object
+      properties:
+        id:
+          type: integer
+        document_nr:
+          type: string
+        title:
+          type: string
+        contact_id:
+          type: integer
+        currency_id:
+          type: integer
+        total:
+          type: string
+        total_gross:
+          type: string
+        mwst_type:
+          type: integer
+          description: VAT (MWST) handling mode.
+        positions:
+          type: array
+          items:
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'OAuth 2.0 Authorization Code (OpenID Connect, issuer https://auth.bexio.com/realms/bexio) access token, or a Personal Access Token (PAT), presented as an Authorization: Bearer header.'

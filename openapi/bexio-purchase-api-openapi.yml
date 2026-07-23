@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: bexio Accounting Purchase API
+  description: REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.
+  termsOfService: https://www.bexio.com/en-CH/gtc
+  contact:
+    name: bexio Developer Support
+    url: https://developer.bexio.com/
+  version: '2.0'
+servers:
+- url: https://api.bexio.com/2.0
+  description: bexio API v2.0 (Switzerland)
+security:
+- bearerAuth: []
+tags:
+- name: Purchase
+paths:
+  /kb_bill:
+    get:
+      operationId: listBills
+      tags:
+      - Purchase
+      summary: List supplier bills (Lieferantenrechnungen)
+      responses:
+        '200':
+          description: A list of bills.
+    post:
+      operationId: createBill
+      tags:
+      - Purchase
+      summary: Create a supplier bill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: The created bill.
+  /kb_expense:
+    get:
+      operationId: listExpenses
+      tags:
+      - Purchase
+      summary: List expenses (Spesen)
+      responses:
+        '200':
+          description: A list of expenses.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'OAuth 2.0 Authorization Code (OpenID Connect, issuer https://auth.bexio.com/realms/bexio) access token, or a Personal Access Token (PAT), presented as an Authorization: Bearer header.'
