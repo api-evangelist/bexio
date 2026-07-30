@@ -7,7 +7,20 @@ description: bexio is a Swiss cloud business-management platform for SMBs and se
   and time tracking, banking, purchasing, and payroll. The bexio REST API at
   api.bexio.com/2.0 exposes these modules over HTTPS with JSON, secured by OAuth 2.0
   (OpenID Connect) or Personal Access Tokens.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bexio.png
 tags:
 - Accounting
 - ERP
@@ -18,155 +31,135 @@ created: '2026-07-17'
 modified: '2026-07-17'
 specificationVersion: '0.19'
 apis:
-- aid: bexio:bexio-contacts-api
-  name: bexio Contacts API
-  tags:
-  - Contacts
-  - CRM
-  - Address Book
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: https://docs.bexio.com/
-    type: APIReference
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Manage contacts, relations, groups, and sectors - the shared address
-    book behind bexio quotes, orders, invoices, and projects. Scopes contact_show /
-    contact_edit.
-- aid: bexio:bexio-sales-order-management-api
-  name: bexio Sales Order Management API
-  tags:
-  - Invoicing
-  - Quotes
-  - Orders
-  - QR-Bill
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Create and manage quotes (Offerte), orders (Auftrag), and invoices
-    (Rechnung), including Swiss QR-bill (QR-Rechnung) PDF generation and payments.
-    Scopes kb_offer_*, kb_order_*, kb_invoice_*.
 - aid: bexio:bexio-accounting-api
   name: bexio Accounting API
+  description: The Accounting API from bexio — 4 operation(s) for accounting.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
   tags:
   - Accounting
-  - Ledger
-  - VAT
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
   properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Chart of accounts (Konten), Swiss VAT (MWST) tax rates, currencies,
-    and manual journal entries (Buchungen). Scope accounting.
-- aid: bexio:bexio-items-api
-  name: bexio Items API
-  tags:
-  - Products
-  - Inventory
-  - Catalog
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Manage items / products (Artikel) with sale and purchase prices and
-    stock. Scopes article_show / article_edit.
-- aid: bexio:bexio-projects-time-tracking-api
-  name: bexio Projects & Time Tracking API
-  tags:
-  - Projects
-  - Time Tracking
-  - Timesheets
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Projects, timesheets, and tasks for billable work. Scopes project_show /
-    project_edit, task_show / task_edit.
-- aid: bexio:bexio-files-api
-  name: bexio Files API
-  tags:
-  - Files
-  - Documents
-  - Storage
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Upload, list, and manage files and document attachments. Scope file.
-- aid: bexio:bexio-purchase-api
-  name: bexio Purchase API
-  tags:
-  - Purchasing
-  - Bills
-  - Expenses
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Supplier bills (Lieferantenrechnungen) and expenses (Spesen) on the
-    accounts-payable side. Scopes kb_bill_*, kb_expense_*.
-- aid: bexio:bexio-payroll-api
-  name: bexio Payroll API
-  tags:
-  - Payroll
-  - HR
-  - Absences
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.bexio.com/
-  baseURL: https://api.bexio.com/2.0
-  properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Payroll employees, absences, and paystubs for Swiss salary processing.
-    Scopes payroll_employee_*, payroll_absence_*, payroll_paystub_show.
+  - type: OpenAPI
+    url: openapi/bexio-accounting-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
 - aid: bexio:bexio-banking-api
   name: bexio Banking API
-  tags:
-  - Banking
-  - Payments
-  - IBAN
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: The Banking API from bexio — 1 operation(s) for banking.
   humanURL: https://docs.bexio.com/
   baseURL: https://api.bexio.com/2.0
+  tags:
+  - Banking
   properties:
-  - url: https://docs.bexio.com/
-    type: Documentation
-  - url: openapi/bexio-openapi.yml
-    type: OpenAPI
-  description: Bank accounts and bank payments (Swiss IBAN / QR-bill reconciliation).
-    Scopes bank_account_*, bank_payment_*.
+  - type: OpenAPI
+    url: openapi/bexio-banking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-contacts-api
+  name: bexio Contacts API
+  description: The Contacts API from bexio — 2 operation(s) for contacts.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-files-api
+  name: bexio Files API
+  description: The Files API from bexio — 1 operation(s) for files.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-files-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-items-api
+  name: bexio Items API
+  description: The Items API from bexio — 1 operation(s) for items.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-payroll-api
+  name: bexio Payroll API
+  description: The Payroll API from bexio — 2 operation(s) for payroll.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Payroll
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-payroll-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-projects-api
+  name: bexio Projects API
+  description: The Projects API from bexio — 2 operation(s) for projects.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-purchase-api
+  name: bexio Purchase API
+  description: The Purchase API from bexio — 2 operation(s) for purchase.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Purchase
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-purchase-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
+- aid: bexio:bexio-sales-orders-api
+  name: bexio Sales Orders API
+  description: The Sales Orders API from bexio — 5 operation(s) for sales orders.
+  humanURL: https://docs.bexio.com/
+  baseURL: https://api.bexio.com/2.0
+  tags:
+  - Sales Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bexio-sales-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bexio.com/
+  - type: APIReference
+    url: https://docs.bexio.com/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/bexio/overview
 - type: AgenticAccess
   url: agentic-access/bexio-agentic-access.yml
 - type: TrustCenter
