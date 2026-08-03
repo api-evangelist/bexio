@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "8a90420c-e7d7-41a1-be6b-67574cb889fc",
+    "name": "bexio Accounting Purchase API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:55.000Z",
+    "updatedAt": "2026-07-28T01:12:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8a90420c-e7d7-41a1-be6b-67574cb889fc"
+  },
+  "item": [
+    {
+      "name": "kb_bill",
+      "item": [
+        {
+          "name": "List supplier bills (Lieferantenrechnungen)",
+          "id": "825afe97-e112-4bde-9ae0-126d655f2bdb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/kb_bill",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "kb_bill"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6e1e617a-f1e9-4352-a3d7-5bbc6bf19dd8",
+              "name": "A list of bills.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kb_bill",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kb_bill"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:55.000Z",
+              "updatedAt": "2026-07-28T01:12:55.000Z",
+              "uid": "35240-6e1e617a-f1e9-4352-a3d7-5bbc6bf19dd8"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:55.000Z",
+          "updatedAt": "2026-07-28T01:12:55.000Z",
+          "uid": "35240-825afe97-e112-4bde-9ae0-126d655f2bdb"
+        },
+        {
+          "name": "Create a supplier bill",
+          "id": "dbf15162-239f-41f5-9fa3-24a0cffb5b87",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/kb_bill",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "kb_bill"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "be71e593-dd41-4aa0-a730-6d97fbdd0a16",
+              "name": "The created bill.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/kb_bill",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kb_bill"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:55.000Z",
+              "updatedAt": "2026-07-28T01:12:55.000Z",
+              "uid": "35240-be71e593-dd41-4aa0-a730-6d97fbdd0a16"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:55.000Z",
+          "updatedAt": "2026-07-28T01:12:55.000Z",
+          "uid": "35240-dbf15162-239f-41f5-9fa3-24a0cffb5b87"
+        }
+      ],
+      "id": "568cc5e2-face-47a3-8875-778ebdc7d211",
+      "createdAt": "2026-07-28T01:12:55.000Z",
+      "updatedAt": "2026-07-28T01:12:55.000Z",
+      "uid": "35240-568cc5e2-face-47a3-8875-778ebdc7d211"
+    },
+    {
+      "name": "kb_expense",
+      "item": [
+        {
+          "name": "List expenses (Spesen)",
+          "id": "383ed4dd-2be3-4cb5-9769-2ecc949dbb3d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/kb_expense",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "kb_expense"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0c2d3f9b-cd1f-4c59-8562-a82ddd52b019",
+              "name": "A list of expenses.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kb_expense",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kb_expense"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:55.000Z",
+              "updatedAt": "2026-07-28T01:12:55.000Z",
+              "uid": "35240-0c2d3f9b-cd1f-4c59-8562-a82ddd52b019"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:55.000Z",
+          "updatedAt": "2026-07-28T01:12:55.000Z",
+          "uid": "35240-383ed4dd-2be3-4cb5-9769-2ecc949dbb3d"
+        }
+      ],
+      "id": "2e446018-e275-4ebb-8c56-cd904b0bf039",
+      "createdAt": "2026-07-28T01:12:55.000Z",
+      "updatedAt": "2026-07-28T01:12:55.000Z",
+      "uid": "35240-2e446018-e275-4ebb-8c56-cd904b0bf039"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}

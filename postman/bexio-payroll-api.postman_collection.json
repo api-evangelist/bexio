@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "cc384e75-78c3-489d-8057-3e8478d800b8",
+    "name": "bexio Accounting Payroll API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:47.000Z",
+    "updatedAt": "2026-07-28T01:12:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cc384e75-78c3-489d-8057-3e8478d800b8"
+  },
+  "item": [
+    {
+      "name": "payroll",
+      "item": [
+        {
+          "name": "employees",
+          "item": [
+            {
+              "name": "List payroll employees",
+              "id": "0049278a-b83b-43fa-b53d-6431435b6d3b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payroll/employees",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payroll",
+                    "employees"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "09975567-ed16-4078-ba03-f4cf0fc1482f",
+                  "name": "A list of employees.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/payroll/employees",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payroll",
+                        "employees"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:12:48.000Z",
+                  "updatedAt": "2026-07-28T01:12:48.000Z",
+                  "uid": "35240-09975567-ed16-4078-ba03-f4cf0fc1482f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:12:48.000Z",
+              "updatedAt": "2026-07-28T01:12:48.000Z",
+              "uid": "35240-0049278a-b83b-43fa-b53d-6431435b6d3b"
+            }
+          ],
+          "id": "679138ee-6190-4dd8-bc7b-d5564f0257e1",
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-679138ee-6190-4dd8-bc7b-d5564f0257e1"
+        },
+        {
+          "name": "absences",
+          "item": [
+            {
+              "name": "List payroll absences",
+              "id": "ba6a7415-86f1-4ade-ab5b-534bf4ef5cbf",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payroll/absences",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payroll",
+                    "absences"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "52dc1d73-b283-4df9-a7fa-d0b8548a9f5f",
+                  "name": "A list of absences.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/payroll/absences",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payroll",
+                        "absences"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:12:48.000Z",
+                  "updatedAt": "2026-07-28T01:12:48.000Z",
+                  "uid": "35240-52dc1d73-b283-4df9-a7fa-d0b8548a9f5f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:12:48.000Z",
+              "updatedAt": "2026-07-28T01:12:48.000Z",
+              "uid": "35240-ba6a7415-86f1-4ade-ab5b-534bf4ef5cbf"
+            }
+          ],
+          "id": "2cbd5c24-97ce-4127-a088-665f4471fe0e",
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-2cbd5c24-97ce-4127-a088-665f4471fe0e"
+        }
+      ],
+      "id": "162aaf59-a06b-4469-a1d8-4a95194e7c76",
+      "createdAt": "2026-07-28T01:12:48.000Z",
+      "updatedAt": "2026-07-28T01:12:48.000Z",
+      "uid": "35240-162aaf59-a06b-4469-a1d8-4a95194e7c76"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "provider": "bexio",
+  "sources": [
+    "bexio-accounting-api-openapi.yml",
+    "bexio-banking-api-openapi.yml",
+    "bexio-contacts-api-openapi.yml",
+    "bexio-files-api-openapi.yml",
+    "bexio-items-api-openapi.yml",
+    "bexio-payroll-api-openapi.yml",
+    "bexio-projects-api-openapi.yml",
+    "bexio-purchase-api-openapi.yml",
+    "bexio-sales-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "bexio-accounting-api-openapi.yml",
+    "bexio-banking-api-openapi.yml",
+    "bexio-contacts-api-openapi.yml",
+    "bexio-files-api-openapi.yml",
+    "bexio-items-api-openapi.yml",
+    "bexio-payroll-api-openapi.yml",
+    "bexio-projects-api-openapi.yml",
+    "bexio-purchase-api-openapi.yml",
+    "bexio-sales-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

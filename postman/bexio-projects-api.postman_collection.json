@@ -1,0 +1,360 @@
+{
+  "info": {
+    "_postman_id": "32a7442a-60e2-471a-93c8-23595480ff9f",
+    "name": "bexio Accounting Projects API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:48.000Z",
+    "updatedAt": "2026-07-28T01:12:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-32a7442a-60e2-471a-93c8-23595480ff9f"
+  },
+  "item": [
+    {
+      "name": "pr_project",
+      "item": [
+        {
+          "name": "List projects",
+          "id": "b65d12e1-ff70-432d-9e30-e1b5ba7f6166",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pr_project?limit=500&offset=0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pr_project"
+              ],
+              "query": [
+                {
+                  "description": "Page size. Default 500, maximum 2000.",
+                  "key": "limit",
+                  "value": "500"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3cf363d4-54b4-4b32-aa15-e85339daad90",
+              "name": "A list of projects.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pr_project?limit=500&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pr_project"
+                  ],
+                  "query": [
+                    {
+                      "description": "Page size. Default 500, maximum 2000.",
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:49.000Z",
+              "updatedAt": "2026-07-28T01:12:49.000Z",
+              "uid": "35240-3cf363d4-54b4-4b32-aa15-e85339daad90"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-b65d12e1-ff70-432d-9e30-e1b5ba7f6166"
+        },
+        {
+          "name": "Create a project",
+          "id": "5a971329-08d0-4406-bcdf-8bfbd514640f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"pr_state_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pr_project",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pr_project"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "51a0c9e6-ae42-421b-a9c3-ee8e92173701",
+              "name": "The created project.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"pr_state_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/pr_project",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pr_project"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:49.000Z",
+              "updatedAt": "2026-07-28T01:12:49.000Z",
+              "uid": "35240-51a0c9e6-ae42-421b-a9c3-ee8e92173701"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-5a971329-08d0-4406-bcdf-8bfbd514640f"
+        }
+      ],
+      "id": "5e5b6a2a-24c9-45b0-923e-cb10e22d5feb",
+      "createdAt": "2026-07-28T01:12:48.000Z",
+      "updatedAt": "2026-07-28T01:12:48.000Z",
+      "uid": "35240-5e5b6a2a-24c9-45b0-923e-cb10e22d5feb"
+    },
+    {
+      "name": "timesheet",
+      "item": [
+        {
+          "name": "List timesheet entries",
+          "id": "ddfb6578-82a2-42de-a80d-7f224ef31273",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/timesheet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timesheet"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a96960ec-fe61-4cd4-aef9-f82366ccdcc0",
+              "name": "A list of timesheet entries.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/timesheet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "timesheet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:49.000Z",
+              "updatedAt": "2026-07-28T01:12:49.000Z",
+              "uid": "35240-a96960ec-fe61-4cd4-aef9-f82366ccdcc0"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-ddfb6578-82a2-42de-a80d-7f224ef31273"
+        },
+        {
+          "name": "Create a timesheet entry",
+          "id": "e1ae3a4f-8cfb-45f9-8214-0907e30b9ba1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/timesheet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timesheet"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "05aad974-e668-419c-b301-0981e410dadf",
+              "name": "The created timesheet entry.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/timesheet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "timesheet"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:49.000Z",
+              "updatedAt": "2026-07-28T01:12:49.000Z",
+              "uid": "35240-05aad974-e668-419c-b301-0981e410dadf"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:48.000Z",
+          "updatedAt": "2026-07-28T01:12:48.000Z",
+          "uid": "35240-e1ae3a4f-8cfb-45f9-8214-0907e30b9ba1"
+        }
+      ],
+      "id": "257ebaab-3485-4e30-ac1a-af6908743dac",
+      "createdAt": "2026-07-28T01:12:48.000Z",
+      "updatedAt": "2026-07-28T01:12:48.000Z",
+      "uid": "35240-257ebaab-3485-4e30-ac1a-af6908743dac"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}

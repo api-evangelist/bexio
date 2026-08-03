@@ -1,0 +1,108 @@
+{
+  "info": {
+    "_postman_id": "55bc6129-b7b0-46b8-a303-df231e6296f1",
+    "name": "bexio Accounting Banking API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:31.000Z",
+    "updatedAt": "2026-07-28T01:12:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-55bc6129-b7b0-46b8-a303-df231e6296f1"
+  },
+  "item": [
+    {
+      "name": "banking",
+      "item": [
+        {
+          "name": "accounts",
+          "item": [
+            {
+              "name": "List bank accounts",
+              "id": "3362a25b-c3b4-440e-a22e-3ae522fbfc5d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/banking/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "banking",
+                    "accounts"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "019b7a20-8c29-44c7-af96-f5cb293f6561",
+                  "name": "A list of bank accounts.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/banking/accounts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "banking",
+                        "accounts"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:12:31.000Z",
+                  "updatedAt": "2026-07-28T01:12:31.000Z",
+                  "uid": "35240-019b7a20-8c29-44c7-af96-f5cb293f6561"
+                }
+              ],
+              "createdAt": "2026-07-28T01:12:31.000Z",
+              "updatedAt": "2026-07-28T01:12:31.000Z",
+              "uid": "35240-3362a25b-c3b4-440e-a22e-3ae522fbfc5d"
+            }
+          ],
+          "id": "5bf01a89-f14f-433f-ba6f-7a0633089acb",
+          "createdAt": "2026-07-28T01:12:31.000Z",
+          "updatedAt": "2026-07-28T01:12:31.000Z",
+          "uid": "35240-5bf01a89-f14f-433f-ba6f-7a0633089acb"
+        }
+      ],
+      "id": "edb0c0ce-c3b2-4dea-bc14-bf6cd2f75e78",
+      "createdAt": "2026-07-28T01:12:31.000Z",
+      "updatedAt": "2026-07-28T01:12:31.000Z",
+      "uid": "35240-edb0c0ce-c3b2-4dea-bc14-bf6cd2f75e78"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}

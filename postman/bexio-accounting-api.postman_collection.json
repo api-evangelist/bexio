@@ -1,0 +1,398 @@
+{
+  "info": {
+    "_postman_id": "950a4b3e-d8c4-4205-9239-643d1b0e5b8c",
+    "name": "bexio Accounting API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:11.000Z",
+    "updatedAt": "2026-07-28T01:12:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-950a4b3e-d8c4-4205-9239-643d1b0e5b8c"
+  },
+  "item": [
+    {
+      "name": "accounts",
+      "item": [
+        {
+          "name": "List chart-of-accounts entries (Konten)",
+          "id": "f651cbb2-5220-49bf-ac8e-5f20c3b79dd3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e4afe87c-176e-4242-93ae-66c4cc5f8730",
+              "name": "A list of accounts.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:11.000Z",
+              "updatedAt": "2026-07-28T01:12:11.000Z",
+              "uid": "35240-e4afe87c-176e-4242-93ae-66c4cc5f8730"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:11.000Z",
+          "updatedAt": "2026-07-28T01:12:11.000Z",
+          "uid": "35240-f651cbb2-5220-49bf-ac8e-5f20c3b79dd3"
+        }
+      ],
+      "id": "3ee3c547-8a12-4c91-8090-a64de05e876f",
+      "createdAt": "2026-07-28T01:12:11.000Z",
+      "updatedAt": "2026-07-28T01:12:11.000Z",
+      "uid": "35240-3ee3c547-8a12-4c91-8090-a64de05e876f"
+    },
+    {
+      "name": "currencies",
+      "item": [
+        {
+          "name": "List currencies",
+          "id": "38af0f14-f9b6-4a0e-b0ff-00653806f158",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/currencies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "currencies"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dcdf6db2-b73c-4295-ade5-a97916a3f686",
+              "name": "A list of currencies (CHF and others).",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/currencies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "currencies"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:11.000Z",
+              "updatedAt": "2026-07-28T01:12:11.000Z",
+              "uid": "35240-dcdf6db2-b73c-4295-ade5-a97916a3f686"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:11.000Z",
+          "updatedAt": "2026-07-28T01:12:11.000Z",
+          "uid": "35240-38af0f14-f9b6-4a0e-b0ff-00653806f158"
+        }
+      ],
+      "id": "f6652140-5f6e-4038-80f3-de5b7edcb9cc",
+      "createdAt": "2026-07-28T01:12:11.000Z",
+      "updatedAt": "2026-07-28T01:12:11.000Z",
+      "uid": "35240-f6652140-5f6e-4038-80f3-de5b7edcb9cc"
+    },
+    {
+      "name": "taxes",
+      "item": [
+        {
+          "name": "List VAT (MWST) tax rates",
+          "id": "925955b8-4de3-4dcc-98cb-89e7a69ce362",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/taxes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "taxes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a2c5b118-a8cc-455f-9e71-a998dc214336",
+              "name": "A list of Swiss VAT tax definitions.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/taxes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "taxes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:11.000Z",
+              "updatedAt": "2026-07-28T01:12:11.000Z",
+              "uid": "35240-a2c5b118-a8cc-455f-9e71-a998dc214336"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:11.000Z",
+          "updatedAt": "2026-07-28T01:12:11.000Z",
+          "uid": "35240-925955b8-4de3-4dcc-98cb-89e7a69ce362"
+        }
+      ],
+      "id": "abcf62f1-26b4-4f24-87b9-5014f3eea37f",
+      "createdAt": "2026-07-28T01:12:11.000Z",
+      "updatedAt": "2026-07-28T01:12:11.000Z",
+      "uid": "35240-abcf62f1-26b4-4f24-87b9-5014f3eea37f"
+    },
+    {
+      "name": "accounting",
+      "item": [
+        {
+          "name": "manual_entries",
+          "item": [
+            {
+              "name": "List manual journal entries (Buchungen)",
+              "id": "364a9df1-701c-46f8-95a8-c984db94fb81",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounting/manual_entries",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounting",
+                    "manual_entries"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "a5570576-46d0-4198-9416-227af59ad18e",
+                  "name": "A list of manual entries.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/accounting/manual_entries",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accounting",
+                        "manual_entries"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:12:11.000Z",
+                  "updatedAt": "2026-07-28T01:12:11.000Z",
+                  "uid": "35240-a5570576-46d0-4198-9416-227af59ad18e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:12:11.000Z",
+              "updatedAt": "2026-07-28T01:12:11.000Z",
+              "uid": "35240-364a9df1-701c-46f8-95a8-c984db94fb81"
+            },
+            {
+              "name": "Create a manual journal entry",
+              "id": "7b0f8cd7-8c48-4a4f-9b6b-8ffc88ae5552",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounting/manual_entries",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounting",
+                    "manual_entries"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "e5d8f497-4f0d-4431-b979-ae78a8ffd3c7",
+                  "name": "The created manual entry.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accounting/manual_entries",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accounting",
+                        "manual_entries"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:12:11.000Z",
+                  "updatedAt": "2026-07-28T01:12:11.000Z",
+                  "uid": "35240-e5d8f497-4f0d-4431-b979-ae78a8ffd3c7"
+                }
+              ],
+              "createdAt": "2026-07-28T01:12:11.000Z",
+              "updatedAt": "2026-07-28T01:12:11.000Z",
+              "uid": "35240-7b0f8cd7-8c48-4a4f-9b6b-8ffc88ae5552"
+            }
+          ],
+          "id": "08f2cabe-3c73-441d-9085-579b62f1d964",
+          "createdAt": "2026-07-28T01:12:11.000Z",
+          "updatedAt": "2026-07-28T01:12:11.000Z",
+          "uid": "35240-08f2cabe-3c73-441d-9085-579b62f1d964"
+        }
+      ],
+      "id": "a487ce8b-6342-48ce-a308-213f085e594c",
+      "createdAt": "2026-07-28T01:12:11.000Z",
+      "updatedAt": "2026-07-28T01:12:11.000Z",
+      "uid": "35240-a487ce8b-6342-48ce-a308-213f085e594c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}

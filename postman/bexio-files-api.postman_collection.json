@@ -1,0 +1,183 @@
+{
+  "info": {
+    "_postman_id": "bff87627-85c2-474b-9b00-8fea9897c504",
+    "name": "bexio Accounting Files API",
+    "description": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:12:45.000Z",
+    "updatedAt": "2026-07-28T01:12:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bff87627-85c2-474b-9b00-8fea9897c504"
+  },
+  "item": [
+    {
+      "name": "files",
+      "item": [
+        {
+          "name": "List files",
+          "id": "da4eae0e-292a-4714-bce9-22dc796c36a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/files",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "files"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1e9aca68-cf8f-4941-be64-37ef9700b3bf",
+              "name": "A list of files.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/files",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "files"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:46.000Z",
+              "updatedAt": "2026-07-28T01:12:46.000Z",
+              "uid": "35240-1e9aca68-cf8f-4941-be64-37ef9700b3bf"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:46.000Z",
+          "updatedAt": "2026-07-28T01:12:46.000Z",
+          "uid": "35240-da4eae0e-292a-4714-bce9-22dc796c36a4"
+        },
+        {
+          "name": "Upload a file",
+          "id": "2d1e20ea-7480-48a7-b06d-fed8610a544e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/files",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "files"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e488cf39-9e95-4b68-872e-0ed18f740b8a",
+              "name": "The uploaded file metadata.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/files",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "files"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:12:46.000Z",
+              "updatedAt": "2026-07-28T01:12:46.000Z",
+              "uid": "35240-e488cf39-9e95-4b68-872e-0ed18f740b8a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:12:46.000Z",
+          "updatedAt": "2026-07-28T01:12:46.000Z",
+          "uid": "35240-2d1e20ea-7480-48a7-b06d-fed8610a544e"
+        }
+      ],
+      "id": "8b853282-2a2c-437a-9f24-426bff15380c",
+      "createdAt": "2026-07-28T01:12:46.000Z",
+      "updatedAt": "2026-07-28T01:12:46.000Z",
+      "uid": "35240-8b853282-2a2c-437a-9f24-426bff15380c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bexio.com/2.0"
+    }
+  ]
+}
