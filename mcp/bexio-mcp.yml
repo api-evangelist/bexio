@@ -1,6 +1,7 @@
 generated: '2026-07-17'
 method: searched
-status: community
+status: third-party
+status_raw: community
 source: >-
   https://github.com/promptpartner/bexio-mcp-server ,
   https://www.pulsemcp.com/servers/promptpartner-bexio , https://zapier.com/mcp/bexio
