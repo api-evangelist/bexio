@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting Items API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List items / products (Artikel)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/article",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Page size. Default 500, maximum 2000."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List items / products (Artikel)"
+        },
+        {
+          "info": {
+            "name": "Create an item / product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/article",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an item / product"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

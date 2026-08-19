@@ -1,0 +1,716 @@
+{
+  "item": [
+    {
+      "id": "b336d9e4-f075-465c-b2ea-f2b1691509ec",
+      "name": "Sales Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "94e62a61-40e4-4822-9768-e25f5b90c8aa",
+          "name": "List quotes (Offerten)",
+          "request": {
+            "name": "List quotes (Offerten)",
+            "description": {
+              "content": "Sales quotes / offers. Local term Offerte (EN gloss quote).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "kb_offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500",
+                  "description": "Page size. Default 500, maximum 2000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "871bd318-93d1-4190-bbdf-0bf5ab655afe",
+              "name": "A list of quotes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3fd2fa21-fe33-4298-9062-79722d15de44",
+          "name": "Create a quote (Offerte)",
+          "request": {
+            "name": "Create a quote (Offerte)",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6175e89-d2dd-486a-9628-75b8bb66a918",
+              "name": "The created quote.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "766dbfe5-0955-473c-8f6d-1236df95f1b8",
+          "name": "List orders (Auftraege)",
+          "request": {
+            "name": "List orders (Auftraege)",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b956600d-2a88-4087-a718-66475db467d8",
+              "name": "A list of orders.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ece97bcc-c6a4-487a-b4c3-b1b93825f92a",
+          "name": "Create an order (Auftrag)",
+          "request": {
+            "name": "Create an order (Auftrag)",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35b6f53a-803e-44e3-bdec-dd9c62862e95",
+              "name": "The created order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f7bcbfe-b9d9-4f63-b699-53e23d4b8e4e",
+          "name": "List invoices (Rechnungen)",
+          "request": {
+            "name": "List invoices (Rechnungen)",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_invoice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500",
+                  "description": "Page size. Default 500, maximum 2000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fcc6ea0-5be6-48c6-aec0-8b2d51b63c74",
+              "name": "A list of invoices.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_invoice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d6d6459-cb61-4e40-a76e-25e0aa2a7fd5",
+          "name": "Create an invoice (Rechnung)",
+          "request": {
+            "name": "Create an invoice (Rechnung)",
+            "description": {
+              "content": "Creates a customer invoice. bexio can render the invoice as a Swiss QR-bill (QR-Rechnung) PDF with an embedded Swiss QR code for payment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "kb_invoice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb7fbbc8-4e08-49ed-9bd8-28ae4b16a343",
+              "name": "The created invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_invoice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"document_nr\": \"<string>\",\n  \"title\": \"<string>\",\n  \"contact_id\": \"<integer>\",\n  \"currency_id\": \"<integer>\",\n  \"total\": \"<string>\",\n  \"total_gross\": \"<string>\",\n  \"mwst_type\": \"<integer>\",\n  \"positions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ba9f6f6-3423-4767-8a1b-60065f61b70b",
+          "name": "Fetch an invoice",
+          "request": {
+            "name": "Fetch an invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_invoice",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37e33478-d28a-42ee-a116-0939f2d1f9c2",
+              "name": "A single invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_invoice",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11ac8bb7-6a43-4f35-97e1-b9fea00d59c9",
+          "name": "Download an invoice PDF (QR-bill)",
+          "request": {
+            "name": "Download an invoice PDF (QR-bill)",
+            "description": {},
+            "url": {
+              "path": [
+                "kb_invoice",
+                ":id",
+                "pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "310244a3-f813-4db4-aa54-9988aec70c64",
+              "name": "The invoice document, base64-encoded PDF.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kb_invoice",
+                    ":id",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bexio.com/2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d6728025-2965-4072-801f-a9ade905ffb0",
+    "name": "bexio Accounting Sales Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

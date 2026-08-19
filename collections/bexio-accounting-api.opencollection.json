@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List chart-of-accounts entries (Konten)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/accounts"
+          },
+          "docs": "List chart-of-accounts entries (Konten)"
+        },
+        {
+          "info": {
+            "name": "List currencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/currencies"
+          },
+          "docs": "List currencies"
+        },
+        {
+          "info": {
+            "name": "List VAT (MWST) tax rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/taxes"
+          },
+          "docs": "List VAT (MWST) tax rates"
+        },
+        {
+          "info": {
+            "name": "List manual journal entries (Buchungen)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/accounting/manual_entries"
+          },
+          "docs": "List manual journal entries (Buchungen)"
+        },
+        {
+          "info": {
+            "name": "Create a manual journal entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/accounting/manual_entries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a manual journal entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,523 @@
+{
+  "item": [
+    {
+      "id": "78282dd7-014f-4134-a8fe-4cf5045a4794",
+      "name": "Contacts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b6c248bb-1539-43ab-b9a7-da0ee7709fff",
+          "name": "List contacts",
+          "request": {
+            "name": "List contacts",
+            "description": {},
+            "url": {
+              "path": [
+                "contact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500",
+                  "description": "Page size. Default 500, maximum 2000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "560e6cb9-581d-4f44-8b02-126aaa063ea3",
+              "name": "A list of contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 53,\n    \"contact_type_id\": 9557,\n    \"name_1\": \"string\",\n    \"name_2\": \"string\",\n    \"address\": \"string\",\n    \"postcode\": \"string\",\n    \"city\": \"string\",\n    \"country_id\": 6000,\n    \"mail\": \"string\",\n    \"phone_fixed\": \"string\"\n  },\n  {\n    \"id\": 5926,\n    \"contact_type_id\": 9501,\n    \"name_1\": \"string\",\n    \"name_2\": \"string\",\n    \"address\": \"string\",\n    \"postcode\": \"string\",\n    \"city\": \"string\",\n    \"country_id\": 3487,\n    \"mail\": \"string\",\n    \"phone_fixed\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e80897f6-c645-47c9-8eed-bdd2efdfefb7",
+          "name": "Create a contact",
+          "request": {
+            "name": "Create a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "contact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "92f25a7e-ec9d-4350-a421-a49f6b993145",
+              "name": "The created contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d22f0cf8-ced2-4360-8fad-8529fda96e59",
+          "name": "Fetch a contact",
+          "request": {
+            "name": "Fetch a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "295a7fe7-86de-4700-82ad-9c9ac1d5c1b0",
+              "name": "A single contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "059e5762-7d60-4265-bf71-4f48dbd4108b",
+          "name": "Overwrite a contact",
+          "request": {
+            "name": "Overwrite a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8fb22fd-ef23-4813-806a-6788c792da8d",
+              "name": "The updated contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"contact_type_id\": \"<integer>\",\n  \"name_1\": \"<string>\",\n  \"name_2\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country_id\": \"<integer>\",\n  \"mail\": \"<string>\",\n  \"phone_fixed\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b690b302-8614-4931-86a5-66541dd811fb",
+          "name": "Delete a contact",
+          "request": {
+            "name": "Delete a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "501d130f-834a-4d47-baee-6ce75757c70a",
+              "name": "Deletion result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bexio.com/2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fac5cfdd-531f-492b-a825-428c38d7388a",
+    "name": "bexio Accounting Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.\n\nContact Support:\n Name: bexio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

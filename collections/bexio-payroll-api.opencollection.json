@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting Payroll API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payroll",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List payroll employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/payroll/employees"
+          },
+          "docs": "List payroll employees"
+        },
+        {
+          "info": {
+            "name": "List payroll absences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/payroll/absences"
+          },
+          "docs": "List payroll absences"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

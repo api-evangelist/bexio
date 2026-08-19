@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting Sales Orders API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sales Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List quotes (Offerten)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_offer",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Page size. Default 500, maximum 2000."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sales quotes / offers. Local term Offerte (EN gloss quote)."
+        },
+        {
+          "info": {
+            "name": "Create a quote (Offerte)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/kb_offer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a quote (Offerte)"
+        },
+        {
+          "info": {
+            "name": "List orders (Auftraege)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_order"
+          },
+          "docs": "List orders (Auftraege)"
+        },
+        {
+          "info": {
+            "name": "Create an order (Auftrag)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/kb_order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order (Auftrag)"
+        },
+        {
+          "info": {
+            "name": "List invoices (Rechnungen)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_invoice",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Page size. Default 500, maximum 2000."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List invoices (Rechnungen)"
+        },
+        {
+          "info": {
+            "name": "Create an invoice (Rechnung)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/kb_invoice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a customer invoice. bexio can render the invoice as a Swiss QR-bill (QR-Rechnung) PDF with an embedded Swiss QR code for payment."
+        },
+        {
+          "info": {
+            "name": "Fetch an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_invoice/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch an invoice"
+        },
+        {
+          "info": {
+            "name": "Download an invoice PDF (QR-bill)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_invoice/:id/pdf",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download an invoice PDF (QR-bill)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

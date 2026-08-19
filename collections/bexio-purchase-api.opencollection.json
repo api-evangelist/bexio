@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting Purchase API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Purchase",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supplier bills (Lieferantenrechnungen)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_bill"
+          },
+          "docs": "List supplier bills (Lieferantenrechnungen)"
+        },
+        {
+          "info": {
+            "name": "Create a supplier bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bexio.com/2.0/kb_bill",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a supplier bill"
+        },
+        {
+          "info": {
+            "name": "List expenses (Spesen)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/kb_expense"
+          },
+          "docs": "List expenses (Spesen)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

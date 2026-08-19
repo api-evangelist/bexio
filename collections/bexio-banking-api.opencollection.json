@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "bexio Accounting Banking API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Banking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bexio.com/2.0/banking/accounts"
+          },
+          "docs": "List bank accounts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
