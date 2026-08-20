@@ -79,6 +79,8 @@ apis:
   humanURL: https://docs.bexio.com/
   baseURL: https://api.bexio.com/2.0
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -93,6 +95,8 @@ apis:
   humanURL: https://docs.bexio.com/
   baseURL: https://api.bexio.com/2.0
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -121,6 +125,8 @@ apis:
   humanURL: https://docs.bexio.com/
   baseURL: https://api.bexio.com/2.0
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
