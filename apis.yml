@@ -7,6 +7,18 @@ description: bexio is a Swiss cloud business-management platform for SMBs and se
   and time tracking, banking, purchasing, and payroll. The bexio REST API at
   api.bexio.com/2.0 exposes these modules over HTTPS with JSON, secured by OAuth 2.0
   (OpenID Connect) or Personal Access Tokens.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
