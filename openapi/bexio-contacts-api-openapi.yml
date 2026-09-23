@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: bexio Accounting Contacts API
+  title: bexio Contacts API
   description: REST API for bexio, the Swiss cloud business-management platform (accounting, invoicing, contacts, projects, payroll). All endpoints are served over HTTPS under https://api.bexio.com/2.0. JSON is the data-interchange format. Authentication is OAuth 2.0 Authorization Code (OpenID Connect) or a Personal Access Token (PAT); both are presented as a Bearer token. This document is modeled from the public documentation, not a first-party spec.
   termsOfService: https://www.bexio.com/en-CH/gtc
   contact:
@@ -93,6 +93,29 @@ paths:
         '200':
           description: Deletion result.
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
   schemas:
     Contact:
       type: object
@@ -118,29 +141,6 @@ components:
           type: string
         phone_fixed:
           type: string
-  parameters:
-    Offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Page size. Default 500, maximum 2000.
-      schema:
-        type: integer
-        default: 500
-        maximum: 2000
   securitySchemes:
     bearerAuth:
       type: http
