@@ -42,6 +42,23 @@ paths:
         '201':
           description: The created item.
 components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   schemas:
     Article:
       type: object
@@ -58,23 +75,6 @@ components:
           type: string
         currency_id:
           type: integer
-  parameters:
-    Offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Page size. Default 500, maximum 2000.
-      schema:
-        type: integer
-        default: 500
-        maximum: 2000
   securitySchemes:
     bearerAuth:
       type: http
