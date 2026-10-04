@@ -185,6 +185,9 @@ apis:
   - type: APIReference
     url: https://docs.bexio.com/
 common:
+- type: CapabilityMap
+  url: capabilities/bexio-capability-edges.yml
+  name: bexio Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/bexio/overview
 - type: AgenticAccess
