@@ -116,15 +116,6 @@ paths:
           description: The invoice document, base64-encoded PDF.
 components:
   parameters:
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Page size. Default 500, maximum 2000.
-      schema:
-        type: integer
-        default: 500
-        maximum: 2000
     Id:
       name: id
       in: path
@@ -138,6 +129,15 @@ components:
       schema:
         type: integer
         default: 0
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
   schemas:
     SalesDocument:
       type: object

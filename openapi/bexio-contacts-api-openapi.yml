@@ -93,29 +93,6 @@ paths:
         '200':
           description: Deletion result.
 components:
-  parameters:
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Page size. Default 500, maximum 2000.
-      schema:
-        type: integer
-        default: 500
-        maximum: 2000
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    Offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
   schemas:
     Contact:
       type: object
@@ -141,6 +118,29 @@ components:
           type: string
         phone_fixed:
           type: string
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Page size. Default 500, maximum 2000.
+      schema:
+        type: integer
+        default: 500
+        maximum: 2000
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     bearerAuth:
       type: http
