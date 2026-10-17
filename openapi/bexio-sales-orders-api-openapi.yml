@@ -116,12 +116,6 @@ paths:
           description: The invoice document, base64-encoded PDF.
 components:
   parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
     Offset:
       name: offset
       in: query
@@ -129,6 +123,12 @@ components:
       schema:
         type: integer
         default: 0
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
     Limit:
       name: limit
       in: query
