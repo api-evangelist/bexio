@@ -1,4 +1,4 @@
-# bexio (bexio)
+# bexio
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,220 +66,170 @@
 
 bexio is a Swiss cloud business-management platform for SMBs and self-employed, covering accounting, invoicing (incl. Swiss QR-bill), contacts, sales orders, projects and time tracking, banking, purchasing, and payroll. The bexio REST API at api.bexio.com/2.0 exposes these modules over HTTPS with JSON, secured by OAuth 2.0 (OpenID Connect) or Personal Access Tokens.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bexio/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bexio/refs/heads/main/apis.yml)
+**Areas:** Accounting · ERP · Invoicing · Small Business · Switzerland
 
-## Tags
+## bexio on APIs.io
 
-- Accounting
-- ERP
-- Invoicing
-- SMB
-- Switzerland
+Everything profiled for bexio is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bexio/](https://apis.io/providers/bexio/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (9)
 
-- **Created:** 2026-07-17
-- **Modified:** 2026-07-17
+- [bexio Accounting API](https://apis.io/apis/bexio/bexio-accounting-api/) — The Accounting API from bexio — 4 operation(s) for accounting.
+- [bexio Banking API](https://apis.io/apis/bexio/bexio-banking-api/) — The Banking API from bexio — 1 operation(s) for banking.
+- [bexio Contacts API](https://apis.io/apis/bexio/bexio-contacts-api/) — The Contacts API from bexio — 2 operation(s) for contacts.
+- [bexio Files API](https://apis.io/apis/bexio/bexio-files-api/) — The Files API from bexio — 1 operation(s) for files.
+- [bexio Items API](https://apis.io/apis/bexio/bexio-items-api/) — The Items API from bexio — 1 operation(s) for items.
+- [bexio Payroll API](https://apis.io/apis/bexio/bexio-payroll-api/) — The Payroll API from bexio — 2 operation(s) for payroll.
+- [bexio Projects API](https://apis.io/apis/bexio/bexio-projects-api/) — The Projects API from bexio — 2 operation(s) for projects.
+- [bexio Purchase API](https://apis.io/apis/bexio/bexio-purchase-api/) — The Purchase API from bexio — 2 operation(s) for purchase.
+- [bexio Sales Orders API](https://apis.io/apis/bexio/bexio-sales-orders-api/) — The Sales Orders API from bexio — 5 operation(s) for sales orders.
 
-## APIs
+### Published properties
 
-### bexio Contacts API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Manage contacts, relations, groups, and sectors - the shared address book behind bexio quotes, orders, invoices, and projects. Scopes contact_show / contact_edit.
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [bexio-mcp.yml](https://apis.io/servers/bexio/bexio-mcp-yml/)
 
-- Contacts
-- CRM
-- Address Book
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.bexio.com/)
-- [API Reference](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Bexio Agentic Access](https://apis.io/agentic-access/bexio/bexio-agentic-access/)
 
-### bexio Sales Order Management API
+#### Collections (18)
 
-Create and manage quotes (Offerte), orders (Auftrag), and invoices (Rechnung), including Swiss QR-bill (QR-Rechnung) PDF generation and payments. Scopes kb_offer_*, kb_order_*, kb_invoice_*.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
+- [bexio Accounting API](https://apis.io/collections/bexio/open-bexio-accounting-api/)
+- [bexio Accounting Banking API](https://apis.io/collections/bexio/open-bexio-banking-api/)
+- [bexio Accounting Contacts API](https://apis.io/collections/bexio/open-bexio-contacts-api/)
+- [bexio Accounting Files API](https://apis.io/collections/bexio/open-bexio-files-api/)
+- [bexio Accounting Items API](https://apis.io/collections/bexio/open-bexio-items-api/)
+- [bexio Accounting Payroll API](https://apis.io/collections/bexio/open-bexio-payroll-api/)
+- [bexio Accounting Projects API](https://apis.io/collections/bexio/open-bexio-projects-api/)
+- [bexio Accounting Purchase API](https://apis.io/collections/bexio/open-bexio-purchase-api/)
+- [bexio Accounting Sales Orders API](https://apis.io/collections/bexio/open-bexio-sales-orders-api/)
+- [bexio Accounting API](https://apis.io/collections/bexio/postman-bexio-accounting-api/)
+- [bexio Accounting Banking API](https://apis.io/collections/bexio/postman-bexio-banking-api/)
+- [bexio Accounting Contacts API](https://apis.io/collections/bexio/postman-bexio-contacts-api/)
+- [bexio Accounting Files API](https://apis.io/collections/bexio/postman-bexio-files-api/)
+- [bexio Accounting Items API](https://apis.io/collections/bexio/postman-bexio-items-api/)
+- [bexio Accounting Payroll API](https://apis.io/collections/bexio/postman-bexio-payroll-api/)
+- [bexio Accounting Projects API](https://apis.io/collections/bexio/postman-bexio-projects-api/)
+- [bexio Accounting Purchase API](https://apis.io/collections/bexio/postman-bexio-purchase-api/)
+- [bexio Accounting Sales Orders API](https://apis.io/collections/bexio/postman-bexio-sales-orders-api/)
 
-#### Tags
+#### Overlays (1)
 
-- Invoicing
-- Quotes
-- Orders
-- QR-Bill
+OpenAPI overlays, including conversational phrasing for each operation.
 
-#### Properties
+- [Bexio Openapi Overlay](https://apis.io/overlays/bexio/bexio-openapi-overlay/)
 
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+#### Security (4)
 
-### bexio Accounting API
+Authentication, trust centre, and vulnerability disclosure.
 
-Chart of accounts (Konten), Swiss VAT (MWST) tax rates, currencies, and manual journal entries (Buchungen). Scope accounting.
+- [Bexio Authentication](https://apis.io/security/bexio/bexio-authentication/)
+- [Bexio Domain Security](https://apis.io/security/bexio/bexio-domain-security/)
+- [Bexio Trust Center](https://apis.io/security/bexio/bexio-trust-center/)
+- [Bexio Vulnerability Disclosure](https://apis.io/security/bexio/bexio-vulnerability-disclosure/)
 
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
+#### OAuth scopes (1)
 
-#### Tags
+The permissions the API asks for.
 
-- Accounting
-- Ledger
-- VAT
+- [Bexio Scopes](https://apis.io/scopes/bexio/bexio-scopes/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+Published plans, tiers and prices.
 
-### bexio Items API
+- [Bexio Plans Pricing](https://apis.io/plans/bexio/bexio-plans-pricing/)
 
-Manage items / products (Artikel) with sale and purchase prices and stock. Scopes article_show / article_edit.
+#### Rate limits (1)
 
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
+Published request limits.
 
-#### Tags
+- [Bexio Rate Limits](https://apis.io/rate-limits/bexio/bexio-rate-limits/)
 
-- Products
-- Inventory
-- Catalog
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Bexio Finops](https://apis.io/finops/bexio/bexio-finops/)
 
-### bexio Projects & Time Tracking API
+## Where to find this API
 
-Projects, timesheets, and tasks for billable work. Scopes project_show / project_edit, task_show / task_edit.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
-
-#### Tags
-
-- Projects
-- Time Tracking
-- Timesheets
-
-#### Properties
-
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### bexio Files API
-
-Upload, list, and manage files and document attachments. Scope file.
-
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
-
-#### Tags
-
-- Files
-- Documents
-- Storage
-
-#### Properties
-
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### bexio Purchase API
-
-Supplier bills (Lieferantenrechnungen) and expenses (Spesen) on the accounts-payable side. Scopes kb_bill_*, kb_expense_*.
-
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
-
-#### Tags
-
-- Purchasing
-- Bills
-- Expenses
-
-#### Properties
-
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### bexio Payroll API
-
-Payroll employees, absences, and paystubs for Swiss salary processing. Scopes payroll_employee_*, payroll_absence_*, payroll_paystub_show.
-
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
-
-#### Tags
-
-- Payroll
-- HR
-- Absences
-
-#### Properties
-
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### bexio Banking API
-
-Bank accounts and bank payments (Swiss IBAN / QR-bill reconciliation). Scopes bank_account_*, bank_payment_*.
-
-- **Human URL:** [https://docs.bexio.com/](https://docs.bexio.com/)
-- **Base URL:** `https://api.bexio.com/2.0`
-
-#### Tags
-
-- Banking
-- Payments
-- IBAN
-
-#### Properties
-
-- [Documentation](https://docs.bexio.com/)
-- [OpenAPI](openapi/bexio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bexio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-## Common Properties
-
-- [Agentic Access](agentic-access/bexio-agentic-access.yml)
-- [Trust Center](security/bexio-trust-center.yml)
-- [Vulnerability Disclosure](security/bexio-vulnerability-disclosure.yml)
-- [Domain Security](security/bexio-domain-security.yml)
-- [Authentication](authentication/bexio-authentication.yml)
-- [GitHub Organization](https://github.com/bexiocom)
-- [LinkedIn](https://www.linkedin.com/company/bexio-ag)
 - [Website](https://www.bexio.com/)
 - [Documentation](https://docs.bexio.com/)
-- [Plans](plans/bexio-plans-pricing.yml)
-- [Rate Limits](rate-limits/bexio-rate-limits.yml)
-- [Fin Ops](finops/bexio-finops.yml)
+- [Getting started](https://www.bexio.com/en-CH/quickstart-guide)
+- [API reference](https://developer.bexio.com/reference)
+- [Pricing](https://www.bexio.com/en-CH/packages-and-prices)
+- [Sign up](https://www.bexio.com/en-CH/)
+- [Support](https://help.bexio.com/s/)
 - [Blog](https://www.bexio.com/en-CH/blog)
+- [Security](https://www.bexio.com/en-CH/security)
+- [Compliance](https://www.bexio.com/en-CH/security)
+- [Terms of service](https://www.bexio.com/en-CH/policies)
+- [Privacy policy](https://www.bexio.com/en-CH/policies/privacy-policy)
+- [GitHub](https://github.com/bexiocom)
+- [Status](https://bexio.statuspage.io)
 
-## Notes
+## API Evangelist rating
 
-- **Spec provenance:** bexio does not publish a first-party OpenAPI definition as of 2026-07-17 (their docs state one is planned). `openapi/bexio-openapi.yml` is **modeled from the public documentation** at [docs.bexio.com](https://docs.bexio.com/) and the live OpenID Connect configuration.
-- **Auth:** OAuth 2.0 Authorization Code / OpenID Connect (issuer `https://auth.bexio.com/realms/bexio`) or Personal Access Tokens; both sent as `Authorization: Bearer`.
-- **No WebSocket / no native webhooks:** the bexio API is synchronous REST only. See `review.yml`.
-- **Region & currency:** Swiss (CHF), Swiss QR-bill (QR-Rechnung) support, VAT (MWST) handling; data hosted in Switzerland. bexio AG is part of Die Mobiliar.
+**Kin Score 38.7** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 65.0 |
+| Contract quality | 1.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 47.4 |
+| Developer ergonomics | 50.6 |
+| Access clarity | 60.5 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 36.4** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bexio/](https://apis.io/providers/bexio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for bexio: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bexio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
